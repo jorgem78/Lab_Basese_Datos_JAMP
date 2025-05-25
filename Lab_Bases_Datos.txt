@@ -1,0 +1,56 @@
+-- CREACIÓN DEL DIRECTORIO XMLDIR (si no existe ya)
+CREATE OR REPLACE DIRECTORY XMLDIR AS 'C:\\Users\\usuario pc\\Documents\\UNIR\\unir\\Septimo Semestre\\Bases_de_Datos_Avanzadas\\Laboratorio1_XML_Oracle_JAMP';
+
+-- BORRADO DE TABLAS SI EXISTEN
+BEGIN
+  EXECUTE IMMEDIATE 'DROP TABLE empleados CASCADE CONSTRAINTS';
+EXCEPTION
+  WHEN OTHERS THEN
+    IF SQLCODE != -942 THEN RAISE; END IF;
+END;
+/
+
+BEGIN
+  EXECUTE IMMEDIATE 'DROP TABLE departamentos CASCADE CONSTRAINTS';
+EXCEPTION
+  WHEN OTHERS THEN
+    IF SQLCODE != -942 THEN RAISE; END IF;
+END;
+/
+
+-- CREACIÓN DE TABLAS
+CREATE TABLE departamentos (
+  departamento_id NUMBER PRIMARY KEY,
+  nombre_departamento VARCHAR2(100) UNIQUE,
+  localizacion VARCHAR2(100)
+);
+
+CREATE TABLE empleados (
+  empleado_id NUMBER PRIMARY KEY,
+  nombre VARCHAR2(50),
+  apellido VARCHAR2(50),
+  email VARCHAR2(100),
+  departamento_id NUMBER,
+  FOREIGN KEY (departamento_id) REFERENCES departamentos(departamento_id)
+);
+
+-- INSERCIÓN DE DATOS
+INSERT INTO departamentos VALUES (1, 'Ventas', 'Cali');
+INSERT INTO departamentos VALUES (2, 'Marketing', 'Bogota');
+INSERT INTO departamentos VALUES (3, 'Soporte', 'Medellín');
+INSERT INTO departamentos VALUES (4, 'Recursos Humanos', 'Bogota');
+INSERT INTO departamentos VALUES (5, 'Administrativo', 'Bogota');
+INSERT INTO departamentos VALUES (6, 'Financiero', 'Cali');
+
+INSERT INTO empleados VALUES (1, 'Carlos', 'Ramírez', 'carlos.ramirez@jamp.com', 1);
+INSERT INTO empleados VALUES (2, 'Laura', 'Gómez', 'laura.gomez@jamp.com', 2);
+INSERT INTO empleados VALUES (3, 'Andrés', 'Martínez', 'andres.martinez@jamp.com', 3); 
+INSERT INTO empleados VALUES (4, 'Sofía', 'Hernández', 'sofia.hernandez@jamp.com', 4); 
+INSERT INTO empleados VALUES (5, 'Daniel', 'Pérez', 'daniel.perez@jamp.com', 5); 
+INSERT INTO empleados VALUES (6, 'Janneth', 'Corredor', 'janneth.corredor@jamp.com', 6);
+
+
+--Consultas SELECT (para visualizar datos)
+SELECT * FROM empleados;
+SELECT * FROM departamentos;
+    
