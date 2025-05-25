@@ -1,0 +1,21 @@
+--  Contenido de Consulta.sql (para referencia, ejecútalo en SQL Developer)
+SELECT
+    XMLELEMENT("EmpleadosDepartamentos",
+        XMLAGG(
+            XMLELEMENT("EmpleadoDepartamento",
+                XMLELEMENT("EmpleadoID", e.Empleado_id),
+                XMLELEMENT("Nombre", e.Nombre),
+                XMLELEMENT("Apellido", e.Apellido),
+                XMLELEMENT("Email", e.Email),
+                XMLELEMENT("Departamento",
+                    XMLELEMENT("DepartamentoID", d.Departamento_id),
+                    XMLELEMENT("NombreDepartamento", d.Nombre_Departamento),
+                    XMLELEMENT("Ciudad", d.Ciudad_id)  -- Corrected column name
+                )
+            )
+        )
+    )
+FROM
+    Empleados e
+JOIN
+    Departamentos d ON e.Departamento_id = d.Departamento_id;

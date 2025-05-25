@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Empleados>
+  <Empleado>
+    <Nombre>Carlos</Nombre>
+    <Apellido>Ramírez</Apellido>
+    <Email>carlos.ramirez@jamp.com</Email>
+    <Departamento>Ventas</Departamento>
+    <Localizacion>Cali</Localizacion>
+  </Empleado>
+  <Empleado>
+    <Nombre>Laura</Nombre>
+    <Apellido>Gómez</Apellido>
+    <Email>laura.gomez@jamp.com</Email>
+    <Departamento>Marketing</Departamento>
+    <Localizacion>Bogotá</Localizacion>
+  </Empleado>
+  <Empleado>
+    <Nombre>Andrés</Nombre>
+    <Apellido>Martínez</Apellido>
+    <Email>andres.martinez@jamp.com</Email>
+    <Departamento>Soporte</Departamento>
+    <Localizacion>Medellín</Localizacion>
+  </Empleado>
+  <Empleado>
+    <Nombre>Sofia</Nombre>
+    <Apellido>Hernández</Apellido>
+    <Email>sofia.hernandez@jamp.com</Email>
+    <Departamento>Recursos Humanos</Departamento>
+    <Localizacion>Bogotá</Localizacion>
+  </Empleado>
+  <Empleado>
+    <Nombre>Daniel</Nombre>
+    <Apellido>Pérez</Apellido>
+    <Email>daniel.perez@jamp.com</Email>
+    <Departamento>Administrativo</Departamento>
+    <Localizacion>Bogotá</Localizacion>
+  </Empleado>  
+  <Empleado>
+    <Nombre>Janneth</Nombre>
+    <Apellido>Corredor</Apellido>
+    <Email>daniel.perez@jamp.com</Email>
+    <Departamento>Financiero</Departamento>
+    <Localizacion>Cali</Localizacion>
+  </Empleado>  
+</Empleados>

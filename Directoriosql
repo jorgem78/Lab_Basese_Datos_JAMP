@@ -1,0 +1,2 @@
+CREATE OR REPLACE DIRECTORY XMLDIR AS 'C:\Users\usuario pc\Documents\UNIR\unir\Septimo Semestre\Bases_de_Datos_Avanzadas\Laboratorio1_XML_Oracle_JAMP'; 
+
